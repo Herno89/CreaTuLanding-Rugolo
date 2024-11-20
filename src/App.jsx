@@ -5,6 +5,8 @@ import './App.css'
 import Button from './components/Button/Button'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import NavBar from './components/NavBar/NavBar'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import HomeContainer from './components/Home/HomeContainer'
 
 function App() {
   console.log("se renderiza app");
@@ -15,16 +17,30 @@ function App() {
 
   return (
     <>
-    <NavBar valor ={valor}/>
+    {/* <NavBar valor ={valor}/> */}
+{/*     <ItemListContainer mensaje = "Listado de articulos" fn={setValor}/>  */}
+    <BrowserRouter>
+    <NavBar/>
+    <Routes>
+
+
+      <Route exact path="/" element = {<HomeContainer/>}/>
+      <Route exact path="/ItemListContainer" element = {<ItemListContainer/>}/>
+       {/* <ItemListContainer mensaje = "Listado de articulos" fn={setValor}/> */}
+
+
+        
+    </Routes>
+    </BrowserRouter>
+    </>
+  )
+}
+
+export default App
+
 {/*       <div>
       <h1>Hola React</h1>  
       <Button text="Mi primer boton" color= "red"/>
       <Button text="Mi primer boton" color= "blue"/>
       <Button text="Mi primer boton" color= "green"/>
       </div> */}
-      <ItemListContainer mensaje = "Listado de articulos" fn={setValor}/>
-    </>
-  )
-}
-
-export default App

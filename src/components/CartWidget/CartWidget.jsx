@@ -1,14 +1,17 @@
 import React from 'react'
-import IconCart from './IconCart'
+import { BsCart2 } from "react-icons/bs";
 
 const CartWidget = ({valor}) => {
   return (
     <>
-    <div> <IconCart width={24} height={24} />  <span>{valor}</span>
+    
+    <div>
+    <BsCart2 />
+   
     </div>
     </>
   )
 }
-
+ /*   <IconCart width={24} height={24} />  <span>{valor}</span> */
 export default CartWidget
 
